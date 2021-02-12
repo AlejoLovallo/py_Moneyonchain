@@ -75,6 +75,7 @@
         "SetCommissionFinalAddressChanger.json",
         "SetCommissionMocProportionChanger.json",
         "Stoppable.json",
+        "TexPriceProvider.json",
         "UpgradeDelegator.json",
         "UpgradeabilityProxy.json",
         "UpgraderTemplate.json",

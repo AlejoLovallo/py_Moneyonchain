@@ -467,34 +467,12 @@
       {
         "name": "btcToMint",
         "type": "uint256"
-      },
-      {
-        "name": "vendorAccount",
-        "type": "address"
       }
     ],
     "name": "mintBPro",
     "outputs": [],
     "payable": true,
     "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "bproAmount",
-        "type": "uint256"
-      },
-      {
-        "name": "vendorAccount",
-        "type": "address"
-      }
-    ],
-    "name": "redeemBPro",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -509,10 +487,92 @@
         "type": "address"
       }
     ],
+    "name": "mintBProVendors",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "bproAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "redeemBPro",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "bproAmount",
+        "type": "uint256"
+      },
+      {
+        "name": "vendorAccount",
+        "type": "address"
+      }
+    ],
+    "name": "redeemBProVendors",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "btcToMint",
+        "type": "uint256"
+      }
+    ],
     "name": "mintDoc",
     "outputs": [],
     "payable": true,
     "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "btcToMint",
+        "type": "uint256"
+      },
+      {
+        "name": "vendorAccount",
+        "type": "address"
+      }
+    ],
+    "name": "mintDocVendors",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "bucket",
+        "type": "bytes32"
+      },
+      {
+        "name": "bproxAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "redeemBProx",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -531,10 +591,28 @@
         "type": "address"
       }
     ],
-    "name": "redeemBProx",
+    "name": "redeemBProxVendors",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "bucket",
+        "type": "bytes32"
+      },
+      {
+        "name": "btcToMint",
+        "type": "uint256"
+      }
+    ],
+    "name": "mintBProx",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
     "type": "function"
   },
   {
@@ -553,10 +631,24 @@
         "type": "address"
       }
     ],
-    "name": "mintBProx",
+    "name": "mintBProxVendors",
     "outputs": [],
     "payable": true,
     "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "docAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "redeemFreeDoc",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -571,7 +663,7 @@
         "type": "address"
       }
     ],
-    "name": "redeemFreeDoc",
+    "name": "redeemFreeDocVendors",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",

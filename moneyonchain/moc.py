@@ -2556,7 +2556,7 @@ class MoC(Contract):
             amount = amount * self.precision
 
         if self.mode == 'MoC':
-            fxn_to_call = getattr(self.sc.functions, 'mintBPro')
+            fxn_to_call = getattr(self.sc.functions, 'mintBProVendors')
             built_fxn = fxn_to_call(int(amount), vendor_account)
         else:
             fxn_to_call = getattr(self.sc.functions, 'mintRiskPro')
@@ -2572,7 +2572,7 @@ class MoC(Contract):
             amount = amount * self.precision
 
         if self.mode == 'MoC':
-            fxn_to_call = getattr(self.sc.functions, 'mintDoc')
+            fxn_to_call = getattr(self.sc.functions, 'mintDocVendors')
             built_fxn = fxn_to_call(int(amount), vendor_account)
         else:
             fxn_to_call = getattr(self.sc.functions, 'mintStableToken')
@@ -2590,7 +2590,7 @@ class MoC(Contract):
             amount = amount * self.precision
 
         if self.mode == 'MoC':
-            fxn_to_call = getattr(self.sc.functions, 'mintBProx')
+            fxn_to_call = getattr(self.sc.functions, 'mintBProxVendors')
             built_fxn = fxn_to_call(bucket, int(amount), vendor_account)
         else:
             fxn_to_call = getattr(self.sc.functions, 'mintRiskProx')
@@ -2622,7 +2622,7 @@ class MoC(Contract):
                 raise Exception("You are trying to mint more than the limit. Mint BPro limit: {0}".format(
                     max_mint_bpro_available))
 
-        tx_hash = self.connection_manager.fnx_transaction(self.sc, 'mintBPro', int(amount * self.precision), vendor_account,
+        tx_hash = self.connection_manager.fnx_transaction(self.sc, 'mintBProVendors', int(amount * self.precision), vendor_account,
                                                           tx_params={'value': int(total_amount * self.precision)},
                                                           default_account=default_account)
 
@@ -2666,7 +2666,7 @@ class MoC(Contract):
         if total_amount > self.balance_of(default_account):
             raise Exception("You don't have suficient funds")
 
-        tx_hash = self.connection_manager.fnx_transaction(self.sc, 'mintDoc', int(amount * self.precision), vendor_account,
+        tx_hash = self.connection_manager.fnx_transaction(self.sc, 'mintDocVendors', int(amount * self.precision), vendor_account,
                                                           tx_params={'value': int(total_amount * self.precision)},
                                                           default_account=default_account)
 
@@ -2710,7 +2710,7 @@ class MoC(Contract):
         if total_amount > self.balance_of(default_account):
             raise Exception("You don't have suficient funds")
 
-        tx_hash = self.connection_manager.fnx_transaction(self.sc, 'mintBProx', bucket, int(amount * self.precision), vendor_account,
+        tx_hash = self.connection_manager.fnx_transaction(self.sc, 'mintBProxVendors', bucket, int(amount * self.precision), vendor_account,
                                                           tx_params={'value': int(total_amount * self.precision)},
                                                           default_account=default_account)
 
@@ -2750,7 +2750,7 @@ class MoC(Contract):
             raise Exception("You are trying to redeem more than availables. Available: {0}".format(
                 absolute_max_bpro))
 
-        tx_hash = self.connection_manager.fnx_transaction(self.sc, 'redeemBPro', int(amount_token * self.precision), vendor_account,
+        tx_hash = self.connection_manager.fnx_transaction(self.sc, 'redeemBProVendors', int(amount_token * self.precision), vendor_account,
                                                           default_account=default_account)
 
         tx_receipt = None
@@ -2791,7 +2791,7 @@ class MoC(Contract):
             raise Exception("You are trying to redeem more than availables. Available: {0}".format(
                 free_doc))
 
-        tx_hash = self.connection_manager.fnx_transaction(self.sc, 'redeemFreeDoc',
+        tx_hash = self.connection_manager.fnx_transaction(self.sc, 'redeemFreeDocVendors',
                                                           int(amount_token * self.precision), vendor_account,
                                                           default_account=default_account)
 
@@ -2910,7 +2910,7 @@ class MoC(Contract):
 
         bucket = str.encode('X2')
 
-        tx_hash = self.connection_manager.fnx_transaction(self.sc, 'redeemBProx', bucket,
+        tx_hash = self.connection_manager.fnx_transaction(self.sc, 'redeemBProxVendors', bucket,
                                                           int(amount_token * self.precision),
                                                           vendor_account,
                                                           default_account=default_account)

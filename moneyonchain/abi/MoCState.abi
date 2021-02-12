@@ -1638,7 +1638,7 @@
     "name": "getMoCPrice",
     "outputs": [
       {
-        "name": "",
+        "name": "price",
         "type": "uint256"
       }
     ],
